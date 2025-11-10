@@ -1,315 +1,352 @@
-# Town Library Website Project
+# Claude Code Configuration - SPARC Development Environment
+
+## 🚨 CRITICAL: CONCURRENT EXECUTION & FILE MANAGEMENT
+
+**ABSOLUTE RULES**:
+1. ALL operations MUST be concurrent/parallel in a single message
+2. **NEVER save working files, text/mds and tests to the root folder**
+3. ALWAYS organize files in appropriate subdirectories
+4. **USE CLAUDE CODE'S TASK TOOL** for spawning agents concurrently, not just MCP
+
+### ⚡ GOLDEN RULE: "1 MESSAGE = ALL RELATED OPERATIONS"
+
+**MANDATORY PATTERNS:**
+- **TodoWrite**: ALWAYS batch ALL todos in ONE call (5-10+ todos minimum)
+- **Task tool (Claude Code)**: ALWAYS spawn ALL agents in ONE message with full instructions
+- **File operations**: ALWAYS batch ALL reads/writes/edits in ONE message
+- **Bash commands**: ALWAYS batch ALL terminal operations in ONE message
+- **Memory operations**: ALWAYS batch ALL memory store/retrieve in ONE message
+
+### 🎯 CRITICAL: Claude Code Task Tool for Agent Execution
+
+**Claude Code's Task tool is the PRIMARY way to spawn agents:**
+```javascript
+// ✅ CORRECT: Use Claude Code's Task tool for parallel agent execution
+[Single Message]:
+  Task("Research agent", "Analyze requirements and patterns...", "researcher")
+  Task("Coder agent", "Implement core features...", "coder")
+  Task("Tester agent", "Create comprehensive tests...", "tester")
+  Task("Reviewer agent", "Review code quality...", "reviewer")
+  Task("Architect agent", "Design system architecture...", "system-architect")
+```
+
+**MCP tools are ONLY for coordination setup:**
+- `mcp__claude-flow__swarm_init` - Initialize coordination topology
+- `mcp__claude-flow__agent_spawn` - Define agent types for coordination
+- `mcp__claude-flow__task_orchestrate` - Orchestrate high-level workflows
+
+### 📁 File Organization Rules
+
+**NEVER save to root folder. Use these directories:**
+- `/src` - Source code files
+- `/tests` - Test files
+- `/docs` - Documentation and markdown files
+- `/config` - Configuration files
+- `/scripts` - Utility scripts
+- `/examples` - Example code
 
 ## Project Overview
-This is a modern, professional website for a town's public library. It serves as the primary digital landing page for library information and provides links to related city and town resources.
 
-## Project Goals
-- Create a clean, accessible, and user-friendly library website
-- Provide essential library information (hours, location, services, contact)
-- Link to relevant city/town resources and partner websites
-- Ensure mobile responsiveness and fast loading times
-- Make the site easy to maintain and update
+This project uses SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) methodology with Claude-Flow orchestration for systematic Test-Driven Development.
 
-## Technology Stack
+## SPARC Commands
 
-### Recommended Stack (Modern Best Practices)
-- **Framework**: Astro (static site generator - fast, SEO-friendly, minimal JavaScript)
-- **Styling**: Tailwind CSS (utility-first, responsive design)
-- **Deployment**: Netlify or Vercel (free tier, automatic deployments from git)
-- **Version Control**: Git + GitHub
-- **Additional Libraries**:
-  - Accessibility: Built-in HTML5 semantic elements
-  - Icons: Lucide Icons or Hero Icons
-  - Forms: Native HTML5 with Netlify Forms or Formspree
+### Core Commands
+- `npx claude-flow sparc modes` - List available modes
+- `npx claude-flow sparc run <mode> "<task>"` - Execute specific mode
+- `npx claude-flow sparc tdd "<feature>"` - Run complete TDD workflow
+- `npx claude-flow sparc info <mode>` - Get mode details
 
-### Why This Stack?
-- **Astro**: Perfect for content-heavy sites, excellent performance, SEO-friendly out of the box
-- **Tailwind**: Rapid development, consistent design, highly customizable
-- **Netlify/Vercel**: Zero-cost hosting, automatic SSL, easy deployments, built-in forms
-- **Static Site**: No backend needed, maximum security, blazing fast, low maintenance
+### Batchtools Commands
+- `npx claude-flow sparc batch <modes> "<task>"` - Parallel execution
+- `npx claude-flow sparc pipeline "<task>"` - Full pipeline processing
+- `npx claude-flow sparc concurrent <mode> "<tasks-file>"` - Multi-task processing
 
-## Project Structure
-```
-library-website/
-├── src/
-│   ├── pages/
-│   │   ├── index.astro           # Homepage
-│   │   ├── about.astro           # About the library
-│   │   ├── services.astro        # Services offered
-│   │   ├── events.astro          # Events calendar
-│   │   ├── contact.astro         # Contact information
-│   │   └── resources.astro       # Links to city/town resources
-│   ├── components/
-│   │   ├── Header.astro          # Site header with navigation
-│   │   ├── Footer.astro          # Site footer
-│   │   ├── Card.astro            # Reusable card component
-│   │   └── HoursDisplay.astro    # Library hours component
-│   ├── layouts/
-│   │   └── Layout.astro          # Base layout template
-│   └── styles/
-│       └── global.css            # Global styles
-├── public/
-│   ├── images/                   # Library photos, logos
-│   └── favicon.svg
-├── astro.config.mjs
-├── tailwind.config.mjs
-├── package.json
-└── README.md
-```
+### Build Commands
+- `npm run build` - Build project
+- `npm run test` - Run tests
+- `npm run lint` - Linting
+- `npm run typecheck` - Type checking
 
-## Key Features to Implement
+## SPARC Workflow Phases
 
-### Homepage
-- Hero section with library image and welcome message
-- Quick access to hours, location, and contact info
-- Featured events or announcements
-- Popular services/resources cards
-- Search bar (can link to catalog system)
+1. **Specification** - Requirements analysis (`sparc run spec-pseudocode`)
+2. **Pseudocode** - Algorithm design (`sparc run spec-pseudocode`)
+3. **Architecture** - System design (`sparc run architect`)
+4. **Refinement** - TDD implementation (`sparc tdd`)
+5. **Completion** - Integration (`sparc run integration`)
 
-### About Page
-- Library history and mission
-- Staff information
-- Board of trustees
-- Building information and accessibility features
+## Code Style & Best Practices
 
-### Services Page
-- Card-based layout showing all services:
-  - Book borrowing and digital materials
-  - Computer and internet access
-  - Study rooms and meeting spaces
-  - Children's programs
-  - Research assistance
-  - Printing, copying, faxing
-  - Any special collections
+- **Modular Design**: Files under 500 lines
+- **Environment Safety**: Never hardcode secrets
+- **Test-First**: Write tests before implementation
+- **Clean Architecture**: Separate concerns
+- **Documentation**: Keep updated
 
-### Events Page
-- Upcoming events calendar
-- Event categories (children, adults, teens, community)
-- Registration links if applicable
+## 🚀 Available Agents (54 Total)
 
-### Contact Page
-- Address with embedded Google Maps
-- Phone and email
-- Contact form
-- Hours of operation (detailed)
-- Directions and parking information
+### Core Development
+`coder`, `reviewer`, `tester`, `planner`, `researcher`
 
-### Resources Page
-- Links to city/town websites
-- Links to regional library system
-- Community resources
-- Educational resources
-- Government services links
+### Swarm Coordination
+`hierarchical-coordinator`, `mesh-coordinator`, `adaptive-coordinator`, `collective-intelligence-coordinator`, `swarm-memory-manager`
 
-## Design Principles
+### Consensus & Distributed
+`byzantine-coordinator`, `raft-manager`, `gossip-coordinator`, `consensus-builder`, `crdt-synchronizer`, `quorum-manager`, `security-manager`
 
-### Accessibility (Critical)
-- WCAG 2.1 AA compliance minimum
-- Semantic HTML5 elements
-- Proper heading hierarchy (h1 → h6)
-- Alt text for all images
-- Sufficient color contrast (4.5:1 for normal text)
-- Keyboard navigation support
-- Screen reader friendly
-- Skip to main content link
+### Performance & Optimization
+`perf-analyzer`, `performance-benchmarker`, `task-orchestrator`, `memory-coordinator`, `smart-agent`
 
-### Visual Design
-- Clean, professional aesthetic
-- Easy-to-read typography (18px minimum for body text)
-- Consistent color scheme (professional library colors)
-- Plenty of white space
-- High-quality images
-- Clear call-to-action buttons
+### GitHub & Repository
+`github-modes`, `pr-manager`, `code-review-swarm`, `issue-tracker`, `release-manager`, `workflow-automation`, `project-board-sync`, `repo-architect`, `multi-repo-swarm`
 
-### Performance
-- Target Lighthouse score: 90+ in all categories
-- Optimized images (WebP format when possible)
-- Lazy loading for images
-- Minimal JavaScript
-- Fast initial page load (< 2 seconds)
+### SPARC Methodology
+`sparc-coord`, `sparc-coder`, `specification`, `pseudocode`, `architecture`, `refinement`
 
-### Mobile-First
-- Fully responsive design
-- Touch-friendly navigation
-- Readable on all screen sizes
-- Hamburger menu for mobile navigation
+### Specialized Development
+`backend-dev`, `mobile-dev`, `ml-developer`, `cicd-engineer`, `api-docs`, `system-architect`, `code-analyzer`, `base-template-generator`
 
-## Development Workflow
+### Testing & Validation
+`tdd-london-swarm`, `production-validator`
 
-### Initial Setup
-1. Initialize Astro project with Tailwind
-2. Set up git repository
-3. Create basic project structure
-4. Implement base layout and components
-5. Build individual pages
-6. Test responsiveness and accessibility
-7. Optimize performance
+### Migration & Planning
+`migration-planner`, `swarm-init`
 
-### Deployment
-1. Push code to GitHub
-2. Connect repository to Netlify or Vercel
-3. Configure build settings (Astro build command)
-4. Set up custom domain if available
-5. Enable automatic deployments on push
+## 🎯 Claude Code vs MCP Tools
 
-### Iteration Process
-1. Gather feedback from library staff
-2. Identify improvements or new features
-3. Implement changes locally
-4. Test thoroughly
-5. Deploy via git push
+### Claude Code Handles ALL EXECUTION:
+- **Task tool**: Spawn and run agents concurrently for actual work
+- File operations (Read, Write, Edit, MultiEdit, Glob, Grep)
+- Code generation and programming
+- Bash commands and system operations
+- Implementation work
+- Project navigation and analysis
+- TodoWrite and task management
+- Git operations
+- Package management
+- Testing and debugging
 
-## Content Guidelines
+### MCP Tools ONLY COORDINATE:
+- Swarm initialization (topology setup)
+- Agent type definitions (coordination patterns)
+- Task orchestration (high-level planning)
+- Memory management
+- Neural features
+- Performance tracking
+- GitHub integration
 
-### Writing Style
-- Clear, friendly, and welcoming tone
-- Short paragraphs (2-3 sentences)
-- Bullet points for lists
-- Active voice
-- Avoid library jargon when possible
+**KEY**: MCP coordinates the strategy, Claude Code's Task tool executes with real agents.
 
-### Required Content
-- Library hours (regular and holiday hours)
-- Physical address and mailing address
-- Phone number and email
-- Social media links (if available)
-- Card registration information
-- Policies (condensed, link to full policies)
-
-## Testing Checklist
-
-Before deployment, verify:
-- [ ] All links work (internal and external)
-- [ ] Forms submit successfully
-- [ ] Images load and have alt text
-- [ ] Mobile responsive on multiple devices
-- [ ] Fast load times (test with Lighthouse)
-- [ ] Cross-browser compatibility (Chrome, Firefox, Safari, Edge)
-- [ ] Accessibility with screen reader
-- [ ] SEO metadata present on all pages
-- [ ] Contact information is accurate
-
-## Maintenance
-
-### Regular Updates
-- Event calendar (weekly/monthly)
-- Hours for holidays
-- News and announcements
-- Staff changes
-- New services or programs
-
-### Periodic Reviews
-- Content accuracy (quarterly)
-- Broken link checks (monthly)
-- Performance optimization (semi-annually)
-- Design refresh (annually)
-- Accessibility audit (annually)
-
-## SEO Requirements
-
-Each page should have:
-- Unique, descriptive title tag (50-60 characters)
-- Meta description (150-160 characters)
-- Open Graph tags for social sharing
-- Proper heading structure
-- Descriptive URLs
-- Local business schema markup (homepage)
-
-## Forms and Interactions
-
-### Contact Form Fields
-- Name (required)
-- Email (required)
-- Phone (optional)
-- Subject (dropdown)
-- Message (required)
-- Submit button
-
-### Form Handling Options
-- Netlify Forms (built-in, easy)
-- Formspree (simple integration)
-- EmailJS (free tier available)
-
-## Future Enhancements (Phase 2)
-- Events calendar with filtering
-- Newsletter signup
-- Online catalog integration
-- Room booking system
-- Digital library card registration
-- Blog for library news
-
-## Claude Code Instructions
-
-When working on this project:
-
-1. **Always prioritize accessibility** - use semantic HTML, proper ARIA labels, and maintain high contrast
-
-2. **Write clean, well-commented code** - future maintainers may not be developers
-
-3. **Optimize images** - compress before adding, use appropriate formats
-
-4. **Test responsiveness** - check layouts at mobile, tablet, and desktop sizes
-
-5. **Keep it simple** - avoid over-engineering; the site should be easy to maintain
-
-6. **Document everything** - add comments explaining why decisions were made
-
-7. **Follow best practices** - use Astro and Tailwind conventions
-
-8. **Think about the end users** - library patrons of all ages and technical abilities
-
-## Questions to Ask the Library
-
-Before building, gather:
-- Official library name and logo
-- Brand colors (if any)
-- High-quality photos of the library
-- Current hours of operation
-- List of all services offered
-- Important links to include
-- Contact information
-- Any existing content to migrate
-- Domain name availability
-- Who will maintain the site after launch
-
-## Success Metrics
-
-The website is successful if:
-- Loads in under 2 seconds
-- Lighthouse scores 90+ in all categories
-- Passes WCAG 2.1 AA accessibility standards
-- Looks professional and modern
-- Easy for library staff to update
-- Reduces phone calls about basic information (hours, location)
-- Positive feedback from community members
-
----
-
-## Getting Started Commands
+## 🚀 Quick Setup
 
 ```bash
-# Create new Astro project with Tailwind
-npm create astro@latest -- --template basics
-npx astro add tailwind
-
-# Run development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
+# Add MCP servers (Claude Flow required, others optional)
+claude mcp add claude-flow npx claude-flow@alpha mcp start
+claude mcp add ruv-swarm npx ruv-swarm mcp start  # Optional: Enhanced coordination
+claude mcp add flow-nexus npx flow-nexus@latest mcp start  # Optional: Cloud features
 ```
 
-## Useful Resources
+## MCP Tool Categories
 
-- Astro Documentation: https://docs.astro.build
-- Tailwind CSS Documentation: https://tailwindcss.com/docs
-- WCAG Guidelines: https://www.w3.org/WAI/WCAG21/quickref/
-- Netlify Documentation: https://docs.netlify.com
-- WebAIM (Accessibility): https://webaim.org
+### Coordination
+`swarm_init`, `agent_spawn`, `task_orchestrate`
+
+### Monitoring
+`swarm_status`, `agent_list`, `agent_metrics`, `task_status`, `task_results`
+
+### Memory & Neural
+`memory_usage`, `neural_status`, `neural_train`, `neural_patterns`
+
+### GitHub Integration
+`github_swarm`, `repo_analyze`, `pr_enhance`, `issue_triage`, `code_review`
+
+### System
+`benchmark_run`, `features_detect`, `swarm_monitor`
+
+### Flow-Nexus MCP Tools (Optional Advanced Features)
+Flow-Nexus extends MCP capabilities with 70+ cloud-based orchestration tools:
+
+**Key MCP Tool Categories:**
+- **Swarm & Agents**: `swarm_init`, `swarm_scale`, `agent_spawn`, `task_orchestrate`
+- **Sandboxes**: `sandbox_create`, `sandbox_execute`, `sandbox_upload` (cloud execution)
+- **Templates**: `template_list`, `template_deploy` (pre-built project templates)
+- **Neural AI**: `neural_train`, `neural_patterns`, `seraphina_chat` (AI assistant)
+- **GitHub**: `github_repo_analyze`, `github_pr_manage` (repository management)
+- **Real-time**: `execution_stream_subscribe`, `realtime_subscribe` (live monitoring)
+- **Storage**: `storage_upload`, `storage_list` (cloud file management)
+
+**Authentication Required:**
+- Register: `mcp__flow-nexus__user_register` or `npx flow-nexus@latest register`
+- Login: `mcp__flow-nexus__user_login` or `npx flow-nexus@latest login`
+- Access 70+ specialized MCP tools for advanced orchestration
+
+## 🚀 Agent Execution Flow with Claude Code
+
+### The Correct Pattern:
+
+1. **Optional**: Use MCP tools to set up coordination topology
+2. **REQUIRED**: Use Claude Code's Task tool to spawn agents that do actual work
+3. **REQUIRED**: Each agent runs hooks for coordination
+4. **REQUIRED**: Batch all operations in single messages
+
+### Example Full-Stack Development:
+
+```javascript
+// Single message with all agent spawning via Claude Code's Task tool
+[Parallel Agent Execution]:
+  Task("Backend Developer", "Build REST API with Express. Use hooks for coordination.", "backend-dev")
+  Task("Frontend Developer", "Create React UI. Coordinate with backend via memory.", "coder")
+  Task("Database Architect", "Design PostgreSQL schema. Store schema in memory.", "code-analyzer")
+  Task("Test Engineer", "Write Jest tests. Check memory for API contracts.", "tester")
+  Task("DevOps Engineer", "Setup Docker and CI/CD. Document in memory.", "cicd-engineer")
+  Task("Security Auditor", "Review authentication. Report findings via hooks.", "reviewer")
+  
+  // All todos batched together
+  TodoWrite { todos: [...8-10 todos...] }
+  
+  // All file operations together
+  Write "backend/server.js"
+  Write "frontend/App.jsx"
+  Write "database/schema.sql"
+```
+
+## 📋 Agent Coordination Protocol
+
+### Every Agent Spawned via Task Tool MUST:
+
+**1️⃣ BEFORE Work:**
+```bash
+npx claude-flow@alpha hooks pre-task --description "[task]"
+npx claude-flow@alpha hooks session-restore --session-id "swarm-[id]"
+```
+
+**2️⃣ DURING Work:**
+```bash
+npx claude-flow@alpha hooks post-edit --file "[file]" --memory-key "swarm/[agent]/[step]"
+npx claude-flow@alpha hooks notify --message "[what was done]"
+```
+
+**3️⃣ AFTER Work:**
+```bash
+npx claude-flow@alpha hooks post-task --task-id "[task]"
+npx claude-flow@alpha hooks session-end --export-metrics true
+```
+
+## 🎯 Concurrent Execution Examples
+
+### ✅ CORRECT WORKFLOW: MCP Coordinates, Claude Code Executes
+
+```javascript
+// Step 1: MCP tools set up coordination (optional, for complex tasks)
+[Single Message - Coordination Setup]:
+  mcp__claude-flow__swarm_init { topology: "mesh", maxAgents: 6 }
+  mcp__claude-flow__agent_spawn { type: "researcher" }
+  mcp__claude-flow__agent_spawn { type: "coder" }
+  mcp__claude-flow__agent_spawn { type: "tester" }
+
+// Step 2: Claude Code Task tool spawns ACTUAL agents that do the work
+[Single Message - Parallel Agent Execution]:
+  // Claude Code's Task tool spawns real agents concurrently
+  Task("Research agent", "Analyze API requirements and best practices. Check memory for prior decisions.", "researcher")
+  Task("Coder agent", "Implement REST endpoints with authentication. Coordinate via hooks.", "coder")
+  Task("Database agent", "Design and implement database schema. Store decisions in memory.", "code-analyzer")
+  Task("Tester agent", "Create comprehensive test suite with 90% coverage.", "tester")
+  Task("Reviewer agent", "Review code quality and security. Document findings.", "reviewer")
+  
+  // Batch ALL todos in ONE call
+  TodoWrite { todos: [
+    {id: "1", content: "Research API patterns", status: "in_progress", priority: "high"},
+    {id: "2", content: "Design database schema", status: "in_progress", priority: "high"},
+    {id: "3", content: "Implement authentication", status: "pending", priority: "high"},
+    {id: "4", content: "Build REST endpoints", status: "pending", priority: "high"},
+    {id: "5", content: "Write unit tests", status: "pending", priority: "medium"},
+    {id: "6", content: "Integration tests", status: "pending", priority: "medium"},
+    {id: "7", content: "API documentation", status: "pending", priority: "low"},
+    {id: "8", content: "Performance optimization", status: "pending", priority: "low"}
+  ]}
+  
+  // Parallel file operations
+  Bash "mkdir -p app/{src,tests,docs,config}"
+  Write "app/package.json"
+  Write "app/src/server.js"
+  Write "app/tests/server.test.js"
+  Write "app/docs/API.md"
+```
+
+### ❌ WRONG (Multiple Messages):
+```javascript
+Message 1: mcp__claude-flow__swarm_init
+Message 2: Task("agent 1")
+Message 3: TodoWrite { todos: [single todo] }
+Message 4: Write "file.js"
+// This breaks parallel coordination!
+```
+
+## Performance Benefits
+
+- **84.8% SWE-Bench solve rate**
+- **32.3% token reduction**
+- **2.8-4.4x speed improvement**
+- **27+ neural models**
+
+## Hooks Integration
+
+### Pre-Operation
+- Auto-assign agents by file type
+- Validate commands for safety
+- Prepare resources automatically
+- Optimize topology by complexity
+- Cache searches
+
+### Post-Operation
+- Auto-format code
+- Train neural patterns
+- Update memory
+- Analyze performance
+- Track token usage
+
+### Session Management
+- Generate summaries
+- Persist state
+- Track metrics
+- Restore context
+- Export workflows
+
+## Advanced Features (v2.0.0)
+
+- 🚀 Automatic Topology Selection
+- ⚡ Parallel Execution (2.8-4.4x speed)
+- 🧠 Neural Training
+- 📊 Bottleneck Analysis
+- 🤖 Smart Auto-Spawning
+- 🛡️ Self-Healing Workflows
+- 💾 Cross-Session Memory
+- 🔗 GitHub Integration
+
+## Integration Tips
+
+1. Start with basic swarm init
+2. Scale agents gradually
+3. Use memory for context
+4. Monitor progress regularly
+5. Train patterns from success
+6. Enable hooks automation
+7. Use GitHub tools first
+
+## Support
+
+- Documentation: https://github.com/ruvnet/claude-flow
+- Issues: https://github.com/ruvnet/claude-flow/issues
+- Flow-Nexus Platform: https://flow-nexus.ruv.io (registration required for cloud features)
 
 ---
 
-**Remember**: This is a public service website. Accessibility, clarity, and ease of use are paramount. Keep the community's needs at the center of every decision.
+Remember: **Claude Flow coordinates, Claude Code creates!**
+
+# important-instruction-reminders
+Do what has been asked; nothing more, nothing less.
+NEVER create files unless they're absolutely necessary for achieving your goal.
+ALWAYS prefer editing an existing file to creating a new one.
+NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.
+Never save working files, text/mds and tests to the root folder.
