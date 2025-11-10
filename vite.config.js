@@ -24,6 +24,13 @@ export default defineConfig({
     // Chunk size warnings
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
+      input: {
+        main: 'index.html',
+        about: 'about.html',
+        calendar: 'calendar.html',
+        contact: 'contact.html',
+        history: 'history.html',
+      },
       output: {
         // Manual chunks for better caching
         manualChunks: {
