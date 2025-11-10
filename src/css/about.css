@@ -1,0 +1,483 @@
+/* ============================================================================
+   Union Beach Memorial Library - About Page Styles
+   Mobile-First, Accessible, WCAG 2.1 AA Compliant
+   ============================================================================ */
+
+/* ============================================================================
+   About Hero Section
+   ============================================================================ */
+.about-hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  padding: var(--spacing-xl) var(--spacing-sm);
+}
+
+/* ============================================================================
+   Mission and Vision Section
+   ============================================================================ */
+.mission-section {
+  background: var(--color-background-alt);
+}
+
+.mission-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.mission-card {
+  background: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--color-primary);
+}
+
+.mission-card h3 {
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-h3);
+}
+
+.mission-card p {
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+}
+
+/* ============================================================================
+   Library Association Members Section
+   ============================================================================ */
+.members-section {
+  background: white;
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xl) auto;
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  line-height: var(--line-height-base);
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+/* ============================================================================
+   Member Profile Cards
+   ============================================================================ */
+.member-card {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  display: flex;
+  flex-direction: column;
+}
+
+.member-card:hover,
+.member-card:focus-within,
+.member-card.keyboard-focused {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Progressive enhancement: fade-in animation */
+.member-card.will-animate {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.member-card.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.member-image {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; /* 1:1 Aspect Ratio */
+  position: relative;
+  overflow: hidden;
+  background: var(--color-background-alt);
+}
+
+.member-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-speed), opacity 0.5s ease-in;
+  opacity: 0;
+}
+
+.member-image img.fade-in {
+  opacity: 1;
+}
+
+.member-image img.loaded {
+  opacity: 1;
+}
+
+.member-image img.error {
+  opacity: 0.3;
+  background: var(--color-background-alt);
+}
+
+.member-card:hover .member-image img,
+.member-card:focus-within .member-image img {
+  transform: scale(1.05);
+}
+
+.member-info {
+  padding: var(--spacing-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.member-info h3 {
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-xs);
+  font-size: 1.4rem;
+}
+
+.member-info .role {
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.member-info .bio {
+  color: var(--color-text);
+  line-height: var(--line-height-base);
+  margin: 0;
+  flex: 1;
+}
+
+/* Read More Button (Progressive Enhancement) */
+.read-more-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  cursor: pointer;
+  padding: var(--spacing-xs) 0;
+  margin-top: var(--spacing-xs);
+  text-decoration: underline;
+  font-size: 0.9rem;
+  transition: color var(--transition-speed);
+}
+
+.read-more-btn:hover,
+.read-more-btn:focus {
+  color: var(--color-primary-dark);
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.bio-wrapper {
+  display: inline;
+}
+
+/* ============================================================================
+   Services and Programs Section
+   ============================================================================ */
+.services-section {
+  background: var(--color-background-alt);
+}
+
+.services-section h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+.service-card {
+  background: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h3 {
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.3rem;
+}
+
+.service-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-card li {
+  padding: var(--spacing-xs) 0;
+  padding-left: var(--spacing-md);
+  position: relative;
+  color: var(--color-text);
+  line-height: var(--line-height-base);
+}
+
+.service-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+/* ============================================================================
+   Call to Action Section
+   ============================================================================ */
+.cta-section {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  color: white;
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-sm);
+}
+
+.cta-section h2 {
+  color: white;
+  margin-bottom: var(--spacing-md);
+}
+
+.cta-section p {
+  max-width: 700px;
+  margin: 0 auto var(--spacing-lg) auto;
+  font-size: 1.1rem;
+  line-height: var(--line-height-base);
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--spacing-lg);
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  min-height: var(--min-tap-target);
+  min-width: 200px;
+  text-align: center;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: white;
+  color: var(--color-primary-dark);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: var(--color-background-alt);
+  transform: translateY(-2px);
+  color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  color: white;
+}
+
+/* ============================================================================
+   Footer Enhancements for About Page
+   ============================================================================ */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  align-items: center;
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-legal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  justify-content: center;
+}
+
+.footer-legal li {
+  margin: 0;
+}
+
+.footer-legal a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: var(--font-size-small);
+  transition: color var(--transition-speed);
+}
+
+.footer-legal a:hover,
+.footer-legal a:focus {
+  color: white;
+  text-decoration: underline;
+}
+
+/* ============================================================================
+   Responsive Design - Tablet (768px and up)
+   ============================================================================ */
+@media screen and (min-width: 768px) {
+  .mission-content {
+    grid-template-columns: 1fr;
+  }
+
+  .members-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta-buttons {
+    flex-direction: row;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* ============================================================================
+   Responsive Design - Desktop (1025px and up)
+   ============================================================================ */
+@media screen and (min-width: 1025px) {
+  .mission-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .members-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .member-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.4rem;
+  }
+}
+
+/* ============================================================================
+   Print Styles
+   ============================================================================ */
+@media print {
+  .about-hero,
+  .cta-section {
+    background: none;
+    color: black;
+  }
+
+  .member-card,
+  .mission-card,
+  .service-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    break-inside: avoid;
+  }
+
+  .member-image {
+    max-height: 200px;
+    padding-bottom: 0;
+  }
+
+  .btn {
+    display: none;
+  }
+}
+
+/* ============================================================================
+   High Contrast Mode Support
+   ============================================================================ */
+@media (prefers-contrast: high) {
+  .member-card,
+  .mission-card,
+  .service-card {
+    border: 2px solid var(--color-primary);
+  }
+
+  .member-card:hover,
+  .member-card:focus-within {
+    border-color: var(--color-primary-dark);
+  }
+}
+
+/* ============================================================================
+   Reduced Motion Support
+   ============================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .member-card,
+  .service-card,
+  .mission-card,
+  .btn {
+    transition: none;
+  }
+
+  .member-card:hover,
+  .member-card:focus-within {
+    transform: none;
+  }
+
+  .member-image img {
+    transition: none;
+  }
+
+  .member-card:hover .member-image img,
+  .member-card:focus-within .member-image img {
+    transform: none;
+  }
+}

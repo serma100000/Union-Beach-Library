@@ -1,0 +1,38 @@
+{
+  "name": "union-beach-library",
+  "version": "1.0.0",
+  "description": "Modern, accessible website for Union Beach Memorial Library",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:18427/git/serma100000/Union-Beach-Library"
+  },
+  "keywords": [
+    "library",
+    "accessibility",
+    "wcag",
+    "responsive-design"
+  ],
+  "author": "Union Beach Memorial Library",
+  "license": "ISC",
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@vitest/coverage-v8": "^4.0.8",
+    "@vitest/ui": "^4.0.8",
+    "axe-core": "^4.11.0",
+    "happy-dom": "^20.0.10",
+    "jest-axe": "^10.0.0",
+    "jsdom": "^27.1.0",
+    "terser": "^5.44.1",
+    "vite": "^7.2.2",
+    "vitest": "^4.0.8"
+  }
+}

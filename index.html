@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Union Beach Memorial Library - Your community library in Union Beach, New Jersey. Named in memory of 12 local men killed in World War II.">
+  <meta name="keywords" content="library, Union Beach, New Jersey, Monmouth County, community, books, events, programs">
+  <title>Union Beach Memorial Library - Home</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="/src/css/normalize.css">
+  <link rel="stylesheet" href="/src/css/main.css">
+
+  <!-- Favicon (placeholder) -->
+  <link rel="icon" type="image/x-icon" href="/public/images/favicon.ico">
+</head>
+<body>
+  <!-- Skip Navigation Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header role="banner">
+    <div class="header-container">
+      <div class="logo-section">
+        <h1>Union Beach Memorial Library</h1>
+        <p class="tagline">Honoring Those Who Served Since 1946</p>
+      </div>
+
+      <nav role="navigation" aria-label="Main navigation">
+        <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu">
+          <span class="visually-hidden">Toggle navigation menu</span>
+          <span class="hamburger-icon" aria-hidden="true">☰</span>
+        </button>
+
+        <ul id="main-menu" class="main-nav">
+          <li><a href="/" aria-current="page">Home</a></li>
+          <li><a href="/calendar.html">Calendar</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/history.html">History</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-content">
+        <h2 id="hero-heading">Welcome to Union Beach Memorial Library</h2>
+        <p class="hero-text">Your gateway to knowledge, community, and history in Union Beach, New Jersey</p>
+
+        <!-- Search Bar -->
+        <div class="search-container" role="search">
+          <form action="/search" method="get">
+            <label for="search-input" class="visually-hidden">Search library catalog</label>
+            <input
+              type="search"
+              id="search-input"
+              name="q"
+              placeholder="Search catalog..."
+              aria-label="Search library catalog"
+            >
+            <button type="submit" aria-label="Submit search">Search</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links" aria-labelledby="quick-links-heading">
+      <h2 id="quick-links-heading">Quick Links</h2>
+      <div class="links-grid">
+        <article class="link-card">
+          <h3>
+            <a href="/calendar.html">
+              <span class="icon" aria-hidden="true">📅</span>
+              Events Calendar
+            </a>
+          </h3>
+          <p>View upcoming programs and events</p>
+        </article>
+
+        <article class="link-card">
+          <h3>
+            <a href="/about.html">
+              <span class="icon" aria-hidden="true">👥</span>
+              About Us
+            </a>
+          </h3>
+          <p>Meet our team and learn about our mission</p>
+        </article>
+
+        <article class="link-card">
+          <h3>
+            <a href="/history.html">
+              <span class="icon" aria-hidden="true">📚</span>
+              Our History
+            </a>
+          </h3>
+          <p>Discover Union Beach and library history</p>
+        </article>
+
+        <article class="link-card">
+          <h3>
+            <a href="/contact.html">
+              <span class="icon" aria-hidden="true">📞</span>
+              Contact Us
+            </a>
+          </h3>
+          <p>Get in touch with our library</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Library Info Section -->
+    <section class="library-info" aria-labelledby="info-heading">
+      <h2 id="info-heading">Library Information</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Hours</h3>
+          <p>Monday - Friday: 10:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+          <p>Sunday: Closed</p>
+          <p><small>Hours subject to change. Please call ahead.</small></p>
+        </div>
+
+        <div class="info-card">
+          <h3>Location</h3>
+          <address>
+            810 Union Avenue<br>
+            Union Beach, NJ<br>
+            Monmouth County
+          </address>
+        </div>
+
+        <div class="info-card">
+          <h3>Contact</h3>
+          <p>Phone: <a href="tel:732-264-3792">732-264-3792</a></p>
+          <p>Email: <a href="mailto:info@unionbeachlibrary.org">info@unionbeachlibrary.org</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Events (Placeholder) -->
+    <section class="featured-events" aria-labelledby="events-heading">
+      <h2 id="events-heading">Upcoming Events</h2>
+      <p>Check our <a href="/calendar.html">calendar</a> for upcoming programs and events.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Union Beach Memorial Library</h3>
+        <p>Part of the Monmouth County Library System</p>
+        <p>Honoring 12 local heroes since 1946</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/calendar.html">Calendar</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/history.html">History</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <ul class="social-links">
+          <li><a href="#" aria-label="Facebook">Facebook</a></li>
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="Twitter">Twitter</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="/accessibility.html">Accessibility Statement</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>&copy; <span id="current-year">2025</span> Union Beach Memorial Library. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

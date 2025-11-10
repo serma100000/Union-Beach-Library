@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Union Beach Memorial Library Events Calendar - View upcoming library programs, events, and community activities. Filter by event type and export to your personal calendar.">
+  <meta name="keywords" content="library events, calendar, Union Beach, programs, community events, library activities">
+  <title>Events Calendar - Union Beach Memorial Library</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="/src/css/normalize.css">
+  <link rel="stylesheet" href="/src/css/main.css">
+  <link rel="stylesheet" href="/src/css/calendar.css">
+
+  <!-- Favicon (placeholder) -->
+  <link rel="icon" type="image/x-icon" href="/public/images/favicon.ico">
+</head>
+<body>
+  <!-- Skip Navigation Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header role="banner">
+    <div class="header-container">
+      <div class="logo-section">
+        <h1>Union Beach Memorial Library</h1>
+        <p class="tagline">Honoring Those Who Served Since 1946</p>
+      </div>
+
+      <nav role="navigation" aria-label="Main navigation">
+        <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu">
+          <span class="visually-hidden">Toggle navigation menu</span>
+          <span class="hamburger-icon" aria-hidden="true">☰</span>
+        </button>
+
+        <ul id="main-menu" class="main-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/calendar.html" aria-current="page">Calendar</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/history.html">History</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    <!-- Calendar Hero Section -->
+    <section class="calendar-hero" aria-labelledby="calendar-heading">
+      <div class="hero-content">
+        <h2 id="calendar-heading">Library Events & Programs</h2>
+        <p class="calendar-description">
+          Discover upcoming events, programs, and activities at Union Beach Memorial Library.
+          Filter by event type, export to your calendar, and join us for community enrichment.
+        </p>
+      </div>
+    </section>
+
+    <!-- Filter and Export Controls -->
+    <section class="controls-section" aria-labelledby="controls-heading">
+      <h2 id="controls-heading" class="visually-hidden">Calendar Controls</h2>
+
+      <div class="controls-container">
+        <!-- Filter Controls -->
+        <div class="filter-controls">
+          <fieldset>
+            <legend>Filter Events</legend>
+
+            <div class="filter-group">
+              <label for="event-type-filter">Event Type:</label>
+              <select id="event-type-filter" data-filter="type" aria-label="Filter events by type">
+                <option value="all">All Events</option>
+                <option value="children">Children's Programs</option>
+                <option value="adult">Adult Programs</option>
+                <option value="teen">Teen Programs</option>
+                <option value="workshop">Workshops</option>
+                <option value="special">Special Events</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="date-filter">Date Range:</label>
+              <select id="date-filter" data-filter="date" aria-label="Filter events by date range">
+                <option value="upcoming">Upcoming Events</option>
+                <option value="this-week">This Week</option>
+                <option value="this-month">This Month</option>
+                <option value="next-month">Next Month</option>
+                <option value="all">All Dates</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="sort-events">Sort By:</label>
+              <select id="sort-events" data-sort aria-label="Sort events">
+                <option value="date-asc">Date (Earliest First)</option>
+                <option value="date-desc">Date (Latest First)</option>
+                <option value="title">Title (A-Z)</option>
+                <option value="type">Event Type</option>
+              </select>
+            </div>
+
+            <button class="clear-filters" data-action="clear-filters" aria-label="Clear all filters">
+              Clear Filters
+            </button>
+          </fieldset>
+        </div>
+
+        <!-- Export Controls -->
+        <div class="export-controls">
+          <h3>Export Calendar</h3>
+          <div class="export-buttons">
+            <button class="btn-export export-google" data-export="google" aria-label="Export all events to Google Calendar">
+              <span aria-hidden="true">📅</span> Add to Google Calendar
+            </button>
+            <button class="btn-export export-ical" data-export="ical" aria-label="Download events as iCal file">
+              <span aria-hidden="true">📥</span> Download iCal
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section" aria-labelledby="events-heading">
+      <h2 id="events-heading">Upcoming Events</h2>
+
+      <!-- Loading Indicator -->
+      <div class="loading" data-loading role="status" aria-live="polite" aria-hidden="true">
+        <span class="visually-hidden">Loading events...</span>
+        <div class="loading-spinner" aria-hidden="true"></div>
+      </div>
+
+      <!-- Status Messages -->
+      <div class="status-message" role="status" aria-live="polite" aria-atomic="true"></div>
+
+      <!-- Events Container -->
+      <div class="events-container" data-events-container>
+        <!-- Event Card 1 -->
+        <article class="event-card" data-event data-event-type="children" data-event-date="2025-11-15">
+          <div class="event-header">
+            <span class="event-type" aria-label="Event type">Children's Program</span>
+            <div class="event-date">
+              <time datetime="2025-11-15T10:00">
+                <span class="date-day">Nov 15</span>
+                <span class="date-year">2025</span>
+              </time>
+            </div>
+          </div>
+
+          <div class="event-content">
+            <h3 class="event-title" data-event-title>Storytime Adventures</h3>
+
+            <p class="event-time" data-event-time>
+              <strong>Time:</strong> <time datetime="2025-11-15T10:00">10:00 AM - 11:00 AM</time>
+            </p>
+
+            <p class="event-location" data-event-location>
+              <strong>Location:</strong> Children's Room, Union Beach Memorial Library
+            </p>
+
+            <p class="event-description" data-event-description>
+              Join us for an interactive storytime featuring engaging books, songs, and activities
+              for children ages 3-7. Each session includes crafts and fun learning activities.
+            </p>
+
+            <div class="event-registration" data-registration>
+              <p><strong>Registration:</strong> No registration required - Drop in welcome!</p>
+            </div>
+          </div>
+
+          <div class="event-footer">
+            <button class="btn-event-export event-export" data-event-export data-event-id="1" aria-label="Export Storytime Adventures to your calendar">
+              <span aria-hidden="true">📅</span> Add to Calendar
+            </button>
+          </div>
+        </article>
+
+        <!-- Event Card 2 -->
+        <article class="event-card" data-event data-event-type="adult" data-event-date="2025-11-18">
+          <div class="event-header">
+            <span class="event-type" aria-label="Event type">Adult Program</span>
+            <div class="event-date">
+              <time datetime="2025-11-18T18:30">
+                <span class="date-day">Nov 18</span>
+                <span class="date-year">2025</span>
+              </time>
+            </div>
+          </div>
+
+          <div class="event-content">
+            <h3 class="event-title" data-event-title>Book Club: Local History Discussion</h3>
+
+            <p class="event-time" data-event-time>
+              <strong>Time:</strong> <time datetime="2025-11-18T18:30">6:30 PM - 8:00 PM</time>
+            </p>
+
+            <p class="event-location" data-event-location>
+              <strong>Location:</strong> Community Room, Union Beach Memorial Library
+            </p>
+
+            <p class="event-description" data-event-description>
+              This month we're discussing the history of Union Beach and Monmouth County.
+              Join fellow readers for thoughtful discussion and community connection.
+            </p>
+
+            <div class="event-registration" data-registration>
+              <p><strong>Registration:</strong> Please call 732-264-3792 or email to register</p>
+            </div>
+          </div>
+
+          <div class="event-footer">
+            <button class="btn-event-export event-export" data-event-export data-event-id="2" aria-label="Export Book Club to your calendar">
+              <span aria-hidden="true">📅</span> Add to Calendar
+            </button>
+          </div>
+        </article>
+
+        <!-- Event Card 3 -->
+        <article class="event-card" data-event data-event-type="workshop" data-event-date="2025-11-20">
+          <div class="event-header">
+            <span class="event-type" aria-label="Event type">Workshop</span>
+            <div class="event-date">
+              <time datetime="2025-11-20T14:00">
+                <span class="date-day">Nov 20</span>
+                <span class="date-year">2025</span>
+              </time>
+            </div>
+          </div>
+
+          <div class="event-content">
+            <h3 class="event-title" data-event-title>Digital Literacy Workshop</h3>
+
+            <p class="event-time" data-event-time>
+              <strong>Time:</strong> <time datetime="2025-11-20T14:00">2:00 PM - 4:00 PM</time>
+            </p>
+
+            <p class="event-location" data-event-location>
+              <strong>Location:</strong> Computer Lab, Union Beach Memorial Library
+            </p>
+
+            <p class="event-description" data-event-description>
+              Learn essential computer skills including email, internet browsing, and online safety.
+              Perfect for beginners or those looking to improve their digital skills.
+            </p>
+
+            <div class="event-registration" data-registration>
+              <p><strong>Registration:</strong> Required - Limited to 12 participants. Call 732-264-3792</p>
+            </div>
+          </div>
+
+          <div class="event-footer">
+            <button class="btn-event-export event-export" data-event-export data-event-id="3" aria-label="Export Digital Literacy Workshop to your calendar">
+              <span aria-hidden="true">📅</span> Add to Calendar
+            </button>
+          </div>
+        </article>
+
+        <!-- Event Card 4 -->
+        <article class="event-card" data-event data-event-type="teen" data-event-date="2025-11-22">
+          <div class="event-header">
+            <span class="event-type" aria-label="Event type">Teen Program</span>
+            <div class="event-date">
+              <time datetime="2025-11-22T16:00">
+                <span class="date-day">Nov 22</span>
+                <span class="date-year">2025</span>
+              </time>
+            </div>
+          </div>
+
+          <div class="event-content">
+            <h3 class="event-title" data-event-title>Teen Game Night</h3>
+
+            <p class="event-time" data-event-time>
+              <strong>Time:</strong> <time datetime="2025-11-22T16:00">4:00 PM - 6:00 PM</time>
+            </p>
+
+            <p class="event-location" data-event-location>
+              <strong>Location:</strong> Teen Space, Union Beach Memorial Library
+            </p>
+
+            <p class="event-description" data-event-description>
+              Join other teens for board games, video games, and snacks. A fun way to unwind and
+              make new friends in a safe, supervised environment.
+            </p>
+
+            <div class="event-registration" data-registration>
+              <p><strong>Registration:</strong> No registration required - All teens ages 13-18 welcome!</p>
+            </div>
+          </div>
+
+          <div class="event-footer">
+            <button class="btn-event-export event-export" data-event-export data-event-id="4" aria-label="Export Teen Game Night to your calendar">
+              <span aria-hidden="true">📅</span> Add to Calendar
+            </button>
+          </div>
+        </article>
+
+        <!-- Event Card 5 -->
+        <article class="event-card" data-event data-event-type="special" data-event-date="2025-11-25">
+          <div class="event-header">
+            <span class="event-type" aria-label="Event type">Special Event</span>
+            <div class="event-date">
+              <time datetime="2025-11-25T13:00">
+                <span class="date-day">Nov 25</span>
+                <span class="date-year">2025</span>
+              </time>
+            </div>
+          </div>
+
+          <div class="event-content">
+            <h3 class="event-title" data-event-title>Veterans Appreciation Day</h3>
+
+            <p class="event-time" data-event-time>
+              <strong>Time:</strong> <time datetime="2025-11-25T13:00">1:00 PM - 3:00 PM</time>
+            </p>
+
+            <p class="event-location" data-event-location>
+              <strong>Location:</strong> Main Hall, Union Beach Memorial Library
+            </p>
+
+            <p class="event-description" data-event-description>
+              A special event honoring local veterans and the 12 Union Beach residents who gave their
+              lives in WWII. Features historical displays, guest speakers, and refreshments.
+            </p>
+
+            <div class="event-registration" data-registration>
+              <p><strong>Registration:</strong> Open to all - Community invited to attend</p>
+            </div>
+          </div>
+
+          <div class="event-footer">
+            <button class="btn-event-export event-export" data-event-export data-event-id="5" aria-label="Export Veterans Appreciation Day to your calendar">
+              <span aria-hidden="true">📅</span> Add to Calendar
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- No Events Message -->
+      <div class="no-events" data-no-events role="status" aria-live="polite" style="display: none;">
+        <p>No events match your current filters. Please try adjusting your filter criteria or <button class="link-button" data-action="clear-filters">clear all filters</button>.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Union Beach Memorial Library</h3>
+        <p>Part of the Monmouth County Library System</p>
+        <p>Honoring 12 local heroes since 1946</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/calendar.html">Calendar</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/history.html">History</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <ul class="social-links">
+          <li><a href="#" aria-label="Facebook">Facebook</a></li>
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="Twitter">Twitter</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="/accessibility.html">Accessibility Statement</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>&copy; <span id="current-year">2025</span> Union Beach Memorial Library. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/calendar.js"></script>
+</body>
+</html>

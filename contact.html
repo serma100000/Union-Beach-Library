@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Union Beach Memorial Library - Visit us at 810 Union Avenue, Union Beach, NJ. Call us at 732-264-3792 or send us a message.">
+  <meta name="keywords" content="contact, Union Beach Library, library hours, phone, email, address, directions, parking">
+  <title>Contact Us - Union Beach Memorial Library</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="/src/css/normalize.css">
+  <link rel="stylesheet" href="/src/css/main.css">
+  <link rel="stylesheet" href="/src/css/contact.css">
+
+  <!-- Favicon (placeholder) -->
+  <link rel="icon" type="image/x-icon" href="/public/images/favicon.ico">
+</head>
+<body>
+  <!-- Skip Navigation Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header role="banner">
+    <div class="header-container">
+      <div class="logo-section">
+        <h1>Union Beach Memorial Library</h1>
+        <p class="tagline">Honoring Those Who Served Since 1946</p>
+      </div>
+
+      <nav role="navigation" aria-label="Main navigation">
+        <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu">
+          <span class="visually-hidden">Toggle navigation menu</span>
+          <span class="hamburger-icon" aria-hidden="true">☰</span>
+        </button>
+
+        <ul id="main-menu" class="main-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/calendar.html">Calendar</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/history.html">History</a></li>
+          <li><a href="/contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    <!-- Page Header -->
+    <section class="page-header" aria-labelledby="page-heading">
+      <div class="page-header-content">
+        <h2 id="page-heading">Contact Us</h2>
+        <p class="page-subtitle">Get in touch with Union Beach Memorial Library</p>
+      </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="contact-info" aria-labelledby="contact-info-heading">
+      <h2 id="contact-info-heading">Library Information</h2>
+
+      <div class="contact-grid">
+        <!-- Address -->
+        <div class="contact-card">
+          <h3>
+            <span class="icon" aria-hidden="true">📍</span>
+            Address
+          </h3>
+          <address>
+            810 Union Avenue<br>
+            Union Beach, NJ 07735<br>
+            Monmouth County
+          </address>
+          <p><a href="https://maps.google.com/?q=810+Union+Avenue+Union+Beach+NJ+07735" target="_blank" rel="noopener noreferrer">Get Directions</a></p>
+        </div>
+
+        <!-- Phone & Email -->
+        <div class="contact-card">
+          <h3>
+            <span class="icon" aria-hidden="true">📞</span>
+            Phone & Email
+          </h3>
+          <p><strong>Phone:</strong> <a href="tel:732-264-3792">732-264-3792</a></p>
+          <p><strong>Email:</strong> <a href="mailto:info@unionbeachlibrary.org">info@unionbeachlibrary.org</a></p>
+          <p><strong>Reference:</strong> <a href="mailto:reference@unionbeachlibrary.org">reference@unionbeachlibrary.org</a></p>
+        </div>
+
+        <!-- Hours -->
+        <div class="contact-card">
+          <h3>
+            <span class="icon" aria-hidden="true">🕐</span>
+            Hours of Operation
+          </h3>
+          <dl class="hours-list">
+            <dt>Monday - Friday:</dt>
+            <dd>10:00 AM - 6:00 PM</dd>
+
+            <dt>Saturday:</dt>
+            <dd>10:00 AM - 4:00 PM</dd>
+
+            <dt>Sunday:</dt>
+            <dd>Closed</dd>
+          </dl>
+          <p><small>Hours subject to change. Please call ahead for holiday hours.</small></p>
+        </div>
+
+        <!-- Parking -->
+        <div class="contact-card">
+          <h3>
+            <span class="icon" aria-hidden="true">🚗</span>
+            Parking Information
+          </h3>
+          <p>Free parking is available in the library parking lot on Union Avenue. Additional street parking is available on nearby streets.</p>
+          <p>Accessible parking spaces are located near the main entrance.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section" aria-labelledby="contact-form-heading">
+      <h2 id="contact-form-heading">Send Us a Message</h2>
+
+      <div class="form-container">
+        <p>Have a question or comment? Fill out the form below and we'll get back to you as soon as possible.</p>
+
+        <form class="contact-form" novalidate data-validate>
+          <!-- Form Errors Container -->
+          <div class="form-errors" role="alert" aria-live="polite" aria-atomic="true"></div>
+
+          <!-- Name Field -->
+          <div class="form-group">
+            <label for="contact-name">
+              Name <span class="required" aria-label="required">*</span>
+            </label>
+            <input
+              type="text"
+              id="contact-name"
+              name="name"
+              required
+              aria-required="true"
+              autocomplete="name"
+            >
+            <span class="error-message" role="alert"></span>
+          </div>
+
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="contact-email">
+              Email <span class="required" aria-label="required">*</span>
+            </label>
+            <input
+              type="email"
+              id="contact-email"
+              name="email"
+              required
+              aria-required="true"
+              autocomplete="email"
+            >
+            <span class="error-message" role="alert"></span>
+          </div>
+
+          <!-- Phone Field -->
+          <div class="form-group">
+            <label for="contact-phone">
+              Phone <span class="optional">(optional)</span>
+            </label>
+            <input
+              type="tel"
+              id="contact-phone"
+              name="phone"
+              autocomplete="tel"
+            >
+            <span class="error-message" role="alert"></span>
+          </div>
+
+          <!-- Subject Field -->
+          <div class="form-group">
+            <label for="contact-subject">
+              Subject <span class="required" aria-label="required">*</span>
+            </label>
+            <input
+              type="text"
+              id="contact-subject"
+              name="subject"
+              required
+              aria-required="true"
+            >
+            <span class="error-message" role="alert"></span>
+          </div>
+
+          <!-- Message Field -->
+          <div class="form-group">
+            <label for="contact-message">
+              Message <span class="required" aria-label="required">*</span>
+            </label>
+            <textarea
+              id="contact-message"
+              name="message"
+              rows="6"
+              required
+              aria-required="true"
+            ></textarea>
+            <span class="error-message" role="alert"></span>
+          </div>
+
+          <!-- Honeypot Field (spam protection) -->
+          <div class="visually-hidden" aria-hidden="true">
+            <label for="contact-website">Website (leave blank)</label>
+            <input
+              type="text"
+              id="contact-website"
+              name="website"
+              tabindex="-1"
+              autocomplete="off"
+            >
+          </div>
+
+          <!-- Submit Button -->
+          <div class="form-group">
+            <button type="submit" class="btn-primary">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-spinner" aria-hidden="true" style="display: none;">⏳</span>
+            </button>
+          </div>
+
+          <!-- Success Message -->
+          <div class="form-success" role="alert" aria-live="polite" style="display: none;">
+            <p>Thank you for your message! We'll get back to you soon.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" aria-labelledby="map-heading">
+      <h2 id="map-heading">Location & Directions</h2>
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3045.2396486858845!2d-74.17419368459395!3d40.33899997937082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c22f5f5e5e5e5e%3A0x5e5e5e5e5e5e5e5e!2s810%20Union%20Ave%2C%20Union%20Beach%2C%20NJ%2007735!5e0!3m2!1sen!2sus!4v1234567890123"
+          width="100%"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map showing Union Beach Memorial Library location at 810 Union Avenue, Union Beach, NJ"
+        ></iframe>
+      </div>
+
+      <div class="map-link">
+        <p>
+          <a href="https://maps.google.com/?q=810+Union+Avenue+Union+Beach+NJ+07735" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            Open in Google Maps
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-media" aria-labelledby="social-heading">
+      <h2 id="social-heading">Connect With Us</h2>
+
+      <p class="social-intro">Follow us on social media for updates, events, and community news!</p>
+
+      <ul class="social-links">
+        <li>
+          <a href="https://www.facebook.com/unionbeachlibrary" target="_blank" rel="noopener noreferrer" aria-label="Visit us on Facebook (opens in new window)">
+            <span class="social-icon" aria-hidden="true">📘</span>
+            <span class="social-name">Facebook</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/unionbeachlibrary" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram (opens in new window)">
+            <span class="social-icon" aria-hidden="true">📷</span>
+            <span class="social-name">Instagram</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/unionbeachlib" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter (opens in new window)">
+            <span class="social-icon" aria-hidden="true">🐦</span>
+            <span class="social-name">Twitter</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Union Beach Memorial Library</h3>
+        <p>Part of the Monmouth County Library System</p>
+        <p>Honoring 12 local heroes since 1946</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/calendar.html">Calendar</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/history.html">History</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <ul class="social-links">
+          <li><a href="https://www.facebook.com/unionbeachlibrary" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a></li>
+          <li><a href="https://www.instagram.com/unionbeachlibrary" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a></li>
+          <li><a href="https://twitter.com/unionbeachlib" target="_blank" rel="noopener noreferrer" aria-label="Twitter">Twitter</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="/accessibility.html">Accessibility Statement</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>&copy; <span id="current-year">2025</span> Union Beach Memorial Library. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/contact.js"></script>
+</body>
+</html>
