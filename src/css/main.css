@@ -677,7 +677,7 @@ footer[role="contentinfo"] {
    ============================================================================ */
 @media (prefers-contrast: high) {
   :root {
-    --color-primary: #0d3d5c;
+    --color-primary: #1a7371;
     --color-text: #000000;
     --color-background: #ffffff;
   }

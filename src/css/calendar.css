@@ -265,19 +265,19 @@
 }
 
 .event-type[data-event-type="children"] {
-  background: #4a89c6;
+  background: #24a9a7;
 }
 
 .event-type[data-event-type="adult"] {
-  background: #1e5a8e;
+  background: #219694;
 }
 
 .event-type[data-event-type="teen"] {
-  background: #2874b5;
+  background: #2cc1bf;
 }
 
 .event-type[data-event-type="workshop"] {
-  background: #0d3d5c;
+  background: #1a7371;
 }
 
 .event-type[data-event-type="special"] {

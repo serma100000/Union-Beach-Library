@@ -172,7 +172,7 @@
 .contact-form input[type="tel"]:focus,
 .contact-form textarea:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(30, 90, 142, 0.1);
+  box-shadow: 0 0 0 3px rgba(33, 150, 148, 0.1);
   outline: 3px solid var(--color-focus);
   outline-offset: 2px;
 }
