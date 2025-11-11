@@ -177,6 +177,25 @@ header[role="banner"] {
   margin: 0 auto;
 }
 
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.library-logo {
+  width: 80px;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo-text h1 {
+  color: white;
+  margin: 0 0 var(--spacing-xs) 0;
+  font-size: 1.5rem;
+}
+
 .logo-section h1 {
   color: white;
   margin: 0 0 var(--spacing-xs) 0;
@@ -549,6 +568,14 @@ footer[role="contentinfo"] {
     --font-size-h1: 2.5rem; /* 40px */
     --font-size-h2: 2rem; /* 32px */
     --font-size-h3: 1.5rem; /* 24px */
+  }
+
+  .library-logo {
+    width: 100px;
+  }
+
+  .logo-text h1 {
+    font-size: 2rem;
   }
 
   .logo-section h1 {
