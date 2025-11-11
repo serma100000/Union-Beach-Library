@@ -495,6 +495,53 @@ footer[role="contentinfo"] {
 }
 
 /* ============================================================================
+   Social Media Links
+   ============================================================================ */
+.social-links {
+  display: flex;
+  gap: var(--spacing-md);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-links li {
+  margin: 0;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: var(--spacing-xs);
+  color: var(--color-text-light);
+  text-decoration: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-light);
+  transform: translateY(-2px);
+}
+
+.social-links a:focus {
+  outline: 2px solid var(--color-text-light);
+  outline-offset: 2px;
+}
+
+.social-links svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* ============================================================================
    Responsive Design - Tablet (768px and up)
    ============================================================================ */
 @media screen and (min-width: 768px) {
