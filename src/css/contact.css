@@ -386,7 +386,7 @@
 .social-media .social-links a {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: var(--spacing-sm);
   padding: var(--spacing-md);
   background: white;
@@ -398,6 +398,7 @@
   min-height: var(--min-tap-target);
   transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 .social-media .social-links a:hover,
